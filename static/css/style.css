@@ -1,0 +1,71 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+h1 {
+  padding: 5px;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 7px;
+  border-style: solid;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  color: white;
+  background-image: url("../images/image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -500px;
+  padding: 20px;
+  width: 30%;
+  background-color: rgb(250, 244, 244);
+  color: black;
+  border-radius: 10px;
+}
+.flex-container > p {
+  margin-top: 0px;
+}
+.flex-container > input {
+  width: 40%;
+  height: 20px;
+  margin-top: 0px;
+  border-radius: 7px;
+  border-width: 1px;
+}
+.flex-container > label {
+  height: 20px;
+  font-weight: 550;
+  font-size: large;
+  margin-bottom: 2px;
+}
+.flex-container > select {
+  width: 40%;
+  margin-top: 0px;
+  border-radius: 7px;
+  border-width: 1px;
+}
+#btn {
+  width: 80px;
+  height: 30px;
+  padding: 4px;
+  font-weight: 550;
+  font-size: medium;
+  margin-bottom: 20px;
+}
+#btn:hover {
+  background-color: rgb(230, 230, 230);
+}

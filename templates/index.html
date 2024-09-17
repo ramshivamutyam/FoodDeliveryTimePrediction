@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Delivery Time Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="home">
+      <h1>Food Delivery Time Prediction</h1>
+      <form
+        id="form"
+        class="flex-container"
+        action="/predict_api"
+        method="POST"
+      >
+        <label for="Delivery_person_ID">Select delivery person ID</label>
+        <select name="Delivery_person_ID" id="Delivery_person_ID"></select
+        ><br />
+        <label for="age">Enter delivery person age</label>
+        <input
+          id="age"
+          name="age"
+          type="number"
+          min="18"
+          placeholder="min 18"
+        /><br />
+        <label for="rating">Delivery person rating</label>
+        <input
+          id="rating"
+          name="rating"
+          type="range"
+          max="5"
+          min="1"
+          step=".1"
+        /><br />
+        <p id="rating_value"></p>
+        <label for="restaurant_latitude">Enter restaurant latitude</label>
+        <input
+          type="number"
+          id="restaurant_latitude"
+          name="restaurant_latitude"
+          placeholder="from -90.0 to 90.0"
+          step="0.1"
+          min="-90"
+          max="90"
+        /><br />
+        <label for="restaurant_longitude">Enter restaurant longitude</label>
+        <input
+          type="number"
+          id="restaurant_longitude"
+          name="restaurant_longitude"
+          placeholder="from -180.0 to 180.0"
+          step="0.1"
+          min="-180"
+          max="180"
+        /><br />
+        <label for="delivery_location_latitude"
+          >Enter delivery location latitude</label
+        >
+        <input
+          type="number"
+          id="delivery_location_latitude"
+          name="delivery_location_latitude"
+          placeholder="from -90.0 to 90.0"
+          step="0.1"
+          min="-90"
+          max="90"
+        /><br />
+        <label for="delivery_location_longitude"
+          >Enter delivery location longitude</label
+        >
+        <input
+          type="number"
+          id="delivery_location_longitude"
+          name="delivery_location_longitude"
+          placeholder="from -180.0 to 180.0"
+          step="0.1"
+          min="-180"
+          max="180"
+        /><br />
+
+        <label for="Order_Date">Enter order date</label>
+        <input type="date" name="Order_Date" id="Order_Date" /><br />
+
+        <label for="Time_Ordered">Enter time ordered</label>
+        <input type="time" name="Time_Ordered" id="Time_Ordered" /><br />
+
+        <label for="Time_Order_picked">Enter Time order picked</label>
+        <input
+          type="time"
+          name="Time_Order_picked"
+          id="Time_Order_picked"
+        /><br />
+
+        <label for="Weather_conditions">Select weather condition</label>
+        <select name="Weather_conditions" id="Weather_conditions"></select
+        ><br />
+
+        <label for="Road_traffic_density">Select road traffic density</label>
+        <select name="Road_traffic_density" id="Road_traffic_density"></select
+        ><br />
+
+        <label for="Vehicle_condition">Select vehicle condition</label>
+        <select name="Vehicle_condition" id="Vehicle_condition">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option></select
+        ><br />
+
+        <label for="order">Select type of order</label>
+        <select name="order" id="order">
+          <option value="Buffet">Buffet</option>
+          <option value="Drinks">Drinks</option>
+          <option value="Meal">Meal</option>
+          <option value="Snack">Snack</option></select
+        ><br />
+
+        <label for="vehicle">Select type of vehicle</label>
+        <select name="vehicle" id="vehicle">
+          <option value="bicycle">Bicycle</option>
+          <option value="electric_scooter">Electric Scooter</option>
+          <option value="motorcycle">Motorcycle</option>
+          <option value="scooter">Scooter</option></select
+        ><br />
+
+        <label for="multiple_deliveries">Select multiple deliveries</label>
+        <select name="multiple_deliveries" id="multiple_deliveries"></select
+        ><br />
+
+        <label for="Festival">It's festival time</label>
+        <select name="Festival" id="Festival">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option></select
+        ><br />
+
+        <label for="City">Select city</label>
+        <select name="City" id="City">
+          <option value="Urban">Urban</option>
+          <option value="Metropolitian">Metropolitian</option>
+          <option value="Semi-Urban">Semi-Urban</option></select
+        ><br />
+
+        <input id="btn" type="submit" value="predict" />
+        <p>Time to deliver (min): {{ prediction }}</p>
+      </form>
+    </div>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static',filename='javascript/script.js') }}"
+    ></script>
+  </body>
+</html>

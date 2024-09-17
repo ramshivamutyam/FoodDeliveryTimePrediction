@@ -1,0 +1,6 @@
+flask
+pytest
+joblib
+geopy
+numpy
+pandas
