@@ -4,3 +4,4 @@ joblib
 geopy
 numpy
 pandas
+xgboost
